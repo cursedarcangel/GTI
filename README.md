@@ -1,0 +1,2 @@
+# GTI
+Git text interface
