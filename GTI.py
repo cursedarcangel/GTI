@@ -14,3 +14,6 @@ choice = int(input())
 if choice == 1:
     from cmds import clone
     clone.cloneR()
+elif choice == 2:
+    from cmds import listdiff
+    listdiff.listChanges()
