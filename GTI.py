@@ -19,3 +19,6 @@ elif choice == 2:
 elif choice == 3:
     from cmds import stash
     stash.stashChanges()
+elif choice == 4:
+    from cmds import commit
+    commit.commit()
