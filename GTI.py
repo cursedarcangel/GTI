@@ -1,4 +1,13 @@
 
+with open('repo.txt', 'r+') as currentrepo:
+    workingrepo = currentrepo.read()
+    print('file opened')
+    if workingrepo == '':
+        print('What is the repo that you want to use?\n')
+        repo = input()
+        currentrepo.write(repo)
+    repo = currentrepo.read()
+
 def start():
     print('Welcome to GTI! What are you looking to do?\n')
     print('1. Clone a repo from GitHub')
@@ -16,13 +25,13 @@ if choice == 1:
     clone.cloneR()
 elif choice == 2:
     from cmds import listdiff
-    listdiff.listChanges()
+    listdiff.listChanges(repo)
 elif choice == 3:
     from cmds import stash
-    stash.stashChanges()
+    stash.stashChanges(repo)
 elif choice == 4:
     from cmds import commit
-    commit.commit()
+    commit.commit(repo)
 elif choice == 5:
     from cmds import checkout
-    checkout.checkout()
+    checkout.checkout(repo)
