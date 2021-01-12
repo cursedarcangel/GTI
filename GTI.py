@@ -1,5 +1,6 @@
+import sys
 
-with open('repo.txt', 'r+') as currentrepo:
+with open(sys.argv[1], 'r+') as currentrepo:
     workingrepo = currentrepo.read()
     print('file opened')
     if workingrepo == '':
