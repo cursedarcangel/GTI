@@ -2,7 +2,7 @@ import sys
 
 with open(sys.argv[1], 'r+') as currentrepo:
     workingrepo = currentrepo.read()
-    print('file opened')
+    print(workingrepo)
     if workingrepo == '':
         print('What is the repo that you want to use?\n')
         repo = input()
