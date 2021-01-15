@@ -62,7 +62,12 @@ def remote():
 
     choice = int(input())
     if choice == 1:
-        pass
+        print('Setup ssh with github with this link: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh')
+        print('What is the name of the github account that owns the repo that you are committing to?\n')
+        name = input()
+        print('What is the repo name?\n')
+        repoName = input()
+        os.system('git remote add origin https://github.com/' + name + '/' + repoName + '.git')
     elif choice == 2:
         from cmds import pull
         pull.pull(repo)
