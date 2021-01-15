@@ -56,7 +56,19 @@ def branches():
         checkout.checkout(repo)
 
 def remote():
-    pass
+    print('1. Set up remote')
+    print('2. Get changes from remote')
+    print('3. Push local changes to remote')
+
+    choice = int(input())
+    if choice == 1:
+        pass
+    elif choice == 2:
+        from cmds import pull
+        pull.pull(repo)
+    elif choice == 3:
+        from cmds import push
+        push.push(repo)
 
 if choice == 1:
     from cmds import clone
