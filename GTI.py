@@ -39,6 +39,7 @@ def changes():
     print('1. See a list of changed files')
     print('2. Stash changes')
     print('3. See changes in a file')
+    print('4. See all prior commits')
 
     choice = int(input())
 
@@ -51,6 +52,9 @@ def changes():
     elif choice == 3:
         from cmds import diff
         diff.diff(repo)
+    elif choice == 4:
+        from cmds import log
+        log.log(repo)
 
 def branches():
     print('1. Checkout a branch')
