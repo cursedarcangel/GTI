@@ -48,12 +48,16 @@ def changes():
 
 def branches():
     print('1. Checkout a branch')
+    print('2. Delete a branch')
 
     choice = int(input())
 
     if choice == 1:
         from cmds import checkout
         checkout.checkout(repo)
+    elif choice == 2:
+        from cmds import deleteb
+        deleteb.deleteBranch(repo)
 
 def remote():
     print('1. Set up remote')
