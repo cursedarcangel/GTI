@@ -21,13 +21,35 @@ start()
 choice = int(input())
 
 def commits():
-    pass
+    print('1. Commit to a repo')
+
+    choice = int(input())
+
+    if choice == 1:
+        from cmds import commit
+        commit.commit(repo)
 
 def changes():
-    pass
+    print('1. See a list of changed files')
+    print('2. Stash changes')
+
+    choice = int(input())
+
+    if choice == 1:
+        from cmds import listdiff
+        listdiff.listChanges(repo)
+    elif choice == 2:
+        from cmds import stash
+        stash.stashChanges(repo)
 
 def branches():
-    pass
+    print('1. Checkout a branch')
+
+    choice = int(input())
+
+    if choice == 1:
+        from cmds import checkout
+        checkout.checkout(repo)
 
 def remote():
     pass
