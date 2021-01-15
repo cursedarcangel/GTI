@@ -15,6 +15,7 @@ def start():
     print('3. See changes')
     print('4. Branches')
     print('5. Remote stuff')
+    print()
 
 start()
 
@@ -36,6 +37,7 @@ def commits():
 def changes():
     print('1. See a list of changed files')
     print('2. Stash changes')
+    print('3. See changes in a file')
 
     choice = int(input())
 
@@ -45,6 +47,9 @@ def changes():
     elif choice == 2:
         from cmds import stash
         stash.stashChanges(repo)
+    elif choice == 3:
+        from cmds import diff
+        diff.diff(repo)
 
 def branches():
     print('1. Checkout a branch')
