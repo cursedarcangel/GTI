@@ -22,12 +22,16 @@ choice = int(input())
 
 def commits():
     print('1. Commit to a repo')
+    print('2. Add changed files to be committed')
 
     choice = int(input())
 
     if choice == 1:
         from cmds import commit
         commit.commit(repo)
+    elif choice == 2:
+        from cmds import add
+        add.add(repo)
 
 def changes():
     print('1. See a list of changed files')
