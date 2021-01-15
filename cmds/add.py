@@ -4,13 +4,13 @@ def add(repo):
     print('\n' + 'The command for adding files to be committed is *git add (file)*' + '\n')
     os.system('cd ' + repo)
     os.system('git status')
-    print('What files do you want to add?(enter *stop* to stop adding)')
+    print('What files do you want to add?(enter * * to stop adding)')
 
     files = []
 
     while True:
         addThis = input()
-        if addThis == 'stop':
+        if addThis == ' ':
             break
         else:
             files.append(addThis)
