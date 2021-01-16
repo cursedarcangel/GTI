@@ -60,6 +60,7 @@ def changes():
 def branches():
     print('1. Checkout a branch')
     print('2. Delete a branch')
+    print('3. Merge branches')
 
     choice = int(input())
 
@@ -69,6 +70,9 @@ def branches():
     elif choice == 2:
         from cmds import deleteb
         deleteb.deleteBranch(repo)
+    elif choice == 3:
+        from cmds import merge
+        merge.merge(repo)
 
 def remote():
     print('1. Set up remote')
