@@ -16,6 +16,7 @@ def start():
     print('3. See changes')
     print('4. Branches')
     print('5. Remote stuff')
+    print('6. Exit GTI')
     print()
 
 start()
@@ -100,3 +101,5 @@ elif choice == 4:
     branches()
 elif choice == 5:
     remote()
+elif choice == 6:
+    sys.exit()
