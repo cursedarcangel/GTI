@@ -9,6 +9,7 @@ with open(sys.argv[1], 'r+') as currentrepo:
         repo = input()
         currentrepo.write(repo)
     repo = currentrepo.read()
+
 print('Welcome to GTI! What are you looking to do?')
 def start():
     print('1. Clone a repo from GitHub')
@@ -16,12 +17,18 @@ def start():
     print('3. See changes')
     print('4. Branches')
     print('5. Remote stuff')
-    print('6. Exit GTI')
+    print('6. Change working repo')
+    print('7. Exit GTI')
     print()
 
 start()
 
 choice = int(input())
+def changeRepo():
+    repo = input('\nWhat is the repo you want to use?\n')
+    with open(sys.argv[1], 'r+') as currentrepo:
+        currentrepo.write(repo)
+        repo = currentrepo.read()
 
 def commits():
     print('1. Commit to a repo')
@@ -106,4 +113,6 @@ elif choice == 4:
 elif choice == 5:
     remote()
 elif choice == 6:
+    changeRepo()
+elif choice == 7:
     sys.exit()
