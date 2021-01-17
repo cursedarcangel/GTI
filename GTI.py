@@ -11,24 +11,13 @@ with open(sys.argv[1], 'r+') as currentrepo:
     repo = currentrepo.read()
 
 print('Welcome to GTI! What are you looking to do?')
-def start():
-    print('1. Clone a repo from GitHub')
-    print('2. Commits')
-    print('3. See changes')
-    print('4. Branches')
-    print('5. Remote stuff')
-    print('6. Change working repo')
-    print('7. Exit GTI')
-    print()
 
-start()
-
-choice = int(input())
 def changeRepo():
     repo = input('\nWhat is the repo you want to use?\n')
     with open(sys.argv[1], 'r+') as currentrepo:
         currentrepo.write(repo)
         repo = currentrepo.read()
+    start()
 
 def commits():
     print('1. Commit to a repo')
@@ -42,6 +31,7 @@ def commits():
     elif choice == 2:
         from cmds import add
         add.add(repo)
+    start()
 
 def changes():
     print('1. See a list of changed files')
@@ -63,6 +53,7 @@ def changes():
     elif choice == 4:
         from cmds import log
         log.log(repo)
+    start()
 
 def branches():
     print('1. Checkout a branch')
@@ -80,6 +71,7 @@ def branches():
     elif choice == 3:
         from cmds import merge
         merge.merge(repo)
+    start()
 
 def remote():
     print('1. Set up remote')
@@ -100,19 +92,33 @@ def remote():
     elif choice == 3:
         from cmds import push
         push.push(repo)
+    start()
 
-if choice == 1:
-    from cmds import clone
-    clone.cloneRepo()
-elif choice == 2:
-    commits()
-elif choice == 3:
-    changes()
-elif choice == 4:
-    branches()
-elif choice == 5:
-    remote()
-elif choice == 6:
-    changeRepo()
-elif choice == 7:
-    sys.exit()
+
+def start():
+    print('1. Clone a repo from GitHub')
+    print('2. Commits')
+    print('3. See changes')
+    print('4. Branches')
+    print('5. Remote stuff')
+    print('6. Change working repo')
+    print('7. Exit GTI')
+    print()
+    choice = int(input())
+     
+    if choice == 1:
+        from cmds import clone
+        clone.cloneRepo()
+    elif choice == 2:
+        commits()
+    elif choice == 3:
+        changes()
+    elif choice == 4:
+        branches()
+    elif choice == 5:
+        remote()
+    elif choice == 6:
+        changeRepo()
+    elif choice == 7:
+        sys.exit()
+start()
